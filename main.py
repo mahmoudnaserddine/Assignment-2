@@ -67,6 +67,29 @@ def function_5():
 function_5()
 
 
+#exercise 6
+
+
+def list_jumps(jumps):
+    n = len(jumps)
+    visited = set()
+    current_index = 0
+
+    while current_index >= 0 and current_index < n:
+        if current_index in visited:
+            return "cycle"
+
+        visited.add(current_index)
+        current_index += jumps[current_index]
+
+    return "out-of-bounds"
+
+
+# Example usage
+jumps = [0, -1, 1, -2]
+result = list_jumps(jumps)
+print(result)
+
 
 
 
